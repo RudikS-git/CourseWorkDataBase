@@ -1,0 +1,25 @@
+﻿@page
+@model CourseWorkDataBase.Pages.AsseccoriesModel
+@{
+}
+
+<div class="asseccories__container">
+
+    @foreach(var item in Model.asseccories)
+    {
+        var accesory = Model.belongs.Where(it => it.AccessoryId == item.Id);
+
+        foreach(var it in accesory)
+        {
+            <div class="asseccories__item">
+                <div>
+                    <img src="" />
+                </div>
+
+                <span>@it.Feature.Name</span>
+                <span>@it.Value</span>
+            </div>
+        }
+    }
+    
+</div>
